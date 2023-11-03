@@ -22,16 +22,16 @@ export default class FlappyBird {
   animate() {
     this.level.animate(this.ctx)
     this.bird.animate(this.ctx)
-      while(this.running) {
-        requestAnimationFrame(this.animate.bind(this))
-      }
+    if(this.running) {
+      requestAnimationFrame(this.animate.bind(this))
+    }
   }
 
   play() {
     this.running = true
     this.animate()
   }
-  
+
   click () {
     console.log('what')
     if (this.running) {
